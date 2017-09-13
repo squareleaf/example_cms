@@ -24,3 +24,15 @@
 body {
 	padding: 10px;
 }
+
+.navbar {
+  background-color: #c8d6f2;
+  border-color: darken(#c8d6f2, 10%);
+}
+
+.btn-primary {
+  background-color: #4a76cd;
+  &:hover {
+    background-color: darken(#4a76cd, 10%);
+  }
+}
