@@ -2,12 +2,15 @@ class ContactsController < ApplicationController
   helper_method :column_sort, :direction_sort
 
   def index
-    if params[:sort] || params[:direction]
-      session[:column_sort] = params[:sort]
-      session[:direction_sort] = params[:direction]
+    if params[:sort] || params[:direction] || params[:page]
+      session[:column_sort] = params[:sort] if params[:sort]
+      session[:direction_sort] = params[:direction] if params[:direction]
+      session[:page] = params[:page] if params[:page]
     end
 
-    @contacts = Contact.order(column_sort + " " + direction_sort)
+    @contacts = Contact.
+      order(column_sort + " " + direction_sort).
+      paginate(page: session[:page] || params[:page], per_page: 20)
   end
 
   def new
