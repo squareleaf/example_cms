@@ -1,8 +1,8 @@
 <table class="table">
   <tr>
-    <th>Name</th>
-    <th>E-mail</th>
-    <th>Phone</th>
+    <th><span><%= sortable "name", "Name" %></span></th>
+    <th><span><%= sortable "email", "E-mail" %></span></th>
+    <th><span><%= sortable "phone", "Phone" %></span></th>
   </tr>
  
   <% @contacts.each do |contact| %>
