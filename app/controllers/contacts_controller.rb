@@ -1,6 +1,8 @@
 class ContactsController < ApplicationController
+  helper_method :column_sort, :direction_sort
+
   def index
-    @contacts = Contact.all
+    @contacts = Contact.order(column_sort + " " + direction_sort)
   end
 
   def new
@@ -16,5 +18,15 @@ class ContactsController < ApplicationController
     else
       redirect_to contacts_path
     end
+  end
+
+  private
+
+  def column_sort
+    Contact.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+
+  def direction_sort
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end
