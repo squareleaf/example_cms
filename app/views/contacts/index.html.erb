@@ -1,5 +1,6 @@
 <table class="table">
   <tr>
+    <th> </th>
     <th><span><%= sortable "name", "Name" %></span></th>
     <th><span><%= sortable "email", "E-mail" %></span></th>
     <th><span><%= sortable "phone", "Phone" %></span></th>
@@ -7,11 +8,12 @@
  
   <% @contacts.each do |contact| %>
     <tr>
-      <td><%= contact.name  %></td>
+      <td><%= image_tag "https://www.gravatar.com/avatar/#{contact.avatar}" %></td>
+      <td><%= contact.name %></td>
       <td><%= mail_to contact.email, contact.email %></td>
       <td><%= contact.phone %></td>
     </tr>
   <% end %>
 
-  <tr><td colspan="3" class="footer"><%= will_paginate @contacts %></td></tr>
+  <tr><td colspan="4" class="footer"><%= will_paginate @contacts %></td></tr>
 </table>
