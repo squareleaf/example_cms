@@ -28,6 +28,17 @@ class ContactsController < ApplicationController
     end
   end
 
+  def destroy
+    @contact = Contact.find(params[:id])
+    name = @contact.name
+
+    if @contact.destroy
+      redirect_to contacts_path
+    else
+      render :index
+    end
+  end
+
   private
 
   def column_sort
