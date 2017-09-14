@@ -26,14 +26,30 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new params.require(:contact).
-                                  permit(:name, :email, :phone, :birthday)
+    @contact = Contact.new(contact_params)
+
     @contact.save
 
     if @contact.errors.any?
       render :new
     else
       redirect_to contacts_path
+    end
+  end
+
+  def edit
+    @contact = Contact.find(params[:id])
+  end
+
+  def update
+    @contact = Contact.find(params[:id])
+
+    puts "UPDATE UPDATE UPDATE"
+    
+    if @contact.update_attributes(contact_params)
+      redirect_to contacts_path
+    else
+      render :index
     end
   end
 
@@ -49,6 +65,10 @@ class ContactsController < ApplicationController
   end
 
   private
+
+  def contact_params
+    params.require(:contact).permit(:name, :email, :phone, :birthday)
+  end
 
   def column_sort
     return session[:column_sort] if session[:column_sort]
