@@ -19,5 +19,10 @@
 </div>
 
 <div class="input-group">
+  <span class="input-group-addon"><%= f.label :notes %></span>
+  <%= f.text_area :notes, class: "form-control" %>
+</div>
+
+<div class="input-group">
   <%= f.submit :class => 'btn btn-primary' %>
 </div>
