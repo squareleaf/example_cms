@@ -25,7 +25,13 @@
 
   <div class="input-group">
     <span class="input-group-addon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span>
-    <%= f.telephone_field :phone, :class => "form-control", placeholder: "###-###-####" %></div>
+    <%= f.telephone_field :phone, :class => "form-control", placeholder: "###-###-####" %>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><%= f.label :birthday %></span>
+    <%= f.text_field :birthday, class: "form-control datepicker" %>
+  </div>
  
   <div class="input-group">
     <%= f.submit :class => 'btn btn-primary' %>

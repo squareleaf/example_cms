@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 
 #adding pagination
 gem 'will_paginate'
+#use jquery-ui
+gem 'jquery-ui-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
