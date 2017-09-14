@@ -19,5 +19,9 @@
     <span class="input-group-addon">Birthday</span>
     <%= text_field_tag contact.birthday, contact.birthday, class: "form-control" %>
   </div>
+
+  <div class="input-group">
+    <%= link_to "Edit", edit_contact_path(contact), remote: true, class: 'btn btn-primary' %>
+  </div>
 </div>
  

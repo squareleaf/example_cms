@@ -1,0 +1,10 @@
+<%= form_for @contact do |f| %>
+
+  <div class="detail-container">
+    <span class="glyphicon glyphicon-remove"></span>
+
+    <%= render partial: 'form', locals: {f: f} %>
+
+  </div>
+
+<% end %>
