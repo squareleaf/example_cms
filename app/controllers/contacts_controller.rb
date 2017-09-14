@@ -18,7 +18,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new params.require(:contact).
-                                  permit(:name, :email, :phone, :avatar)
+                                  permit(:name, :email, :phone, :birthday)
     @contact.save
 
     if @contact.errors.any?
