@@ -1,9 +1,23 @@
+<% if @contact && @contact.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    Contact could not be deleted due to the following <%= "error".pluralize(@contact.errors.count) %>:
+    <ul>
+      <% @contact.errors.full_messages.each do |error_message| %>
+        <li><%= error_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <table class="table">
   <tr>
     <th> </th>
     <th><span><%= sortable "name", "Name" %></span></th>
     <th><span><%= sortable "email", "E-mail" %></span></th>
     <th><span><%= sortable "phone", "Phone" %></span></th>
+    <th> </th>
   </tr>
  
   <% @contacts.each do |contact| %>
@@ -12,6 +26,7 @@
       <td><%= contact.name %></td>
       <td><%= mail_to contact.email, contact.email %></td>
       <td><%= contact.phone %></td>
+      <td><%= link_to "Delete", contact_path(contact), class: 'btn btn-danger', data: { method: :delete, confirm: "Are you sure you want to delete #{contact.name}?" } %></td>
     </tr>
   <% end %>
 
