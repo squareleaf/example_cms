@@ -1,0 +1,23 @@
+<div class="detail-container">
+  <span class="glyphicon glyphicon-remove"></span>
+  <div class="input-group">
+    <span class="input-group-addon">Name</span>
+    <%= text_field_tag contact.name, contact.name, :class => "form-control" %>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">@</span>
+    <%= text_field_tag contact.email, contact.email, :class => "form-control" %>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span>
+    <%= telephone_field_tag contact.phone, contact.phone, :class => "form-control", placeholder: "###-###-####" %>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">Birthday</span>
+    <%= text_field_tag contact.birthday, contact.birthday, class: "form-control" %>
+  </div>
+</div>
+ 

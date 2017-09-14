@@ -23,7 +23,7 @@
   <% @contacts.each do |contact| %>
     <tr>
       <td><%= image_tag "https://www.gravatar.com/avatar/#{contact.avatar}" %></td>
-      <td><%= contact.name %></td>
+      <td><%= link_to contact.name, contact_path(contact), remote: true %></td>
       <td><%= mail_to contact.email, contact.email %></td>
       <td><%= contact.phone %></td>
       <td><%= link_to "Delete", contact_path(contact), class: 'btn btn-danger', data: { method: :delete, confirm: "Are you sure you want to delete #{contact.name}?" } %></td>
@@ -32,3 +32,7 @@
 
   <tr><td colspan="4" class="page-footer"><%= will_paginate @contacts %></td></tr>
 </table>
+
+<div class="detail-view">
+
+</div>
