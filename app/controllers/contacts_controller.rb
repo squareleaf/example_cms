@@ -13,6 +13,15 @@ class ContactsController < ApplicationController
       paginate(page: session[:page] || params[:page], per_page: 20)
   end
 
+  def show
+    @contact = Contact.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def new
   end
 

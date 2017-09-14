@@ -1,0 +1,6 @@
+$(".detail-view").html("<%= escape_javascript(render partial: 'contact', locals: { contact: @contact}) %>");
+
+$(".glyphicon-remove").on("click", function(event) {
+  event.preventDefault();
+  $(".detail-view").toggle();
+});
