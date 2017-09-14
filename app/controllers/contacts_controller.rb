@@ -44,8 +44,6 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id])
 
-    puts "UPDATE UPDATE UPDATE"
-    
     if @contact.update_attributes(contact_params)
       redirect_to contacts_path
     else
