@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phone_number: "608-555-1212"
+  type: 1
+  primary: true
+  contact: one
+
+two:
+  phone_number: "345-909-0987"
+  type: 3
+  primary: false
+  contact: two

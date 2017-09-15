@@ -10,7 +10,13 @@
 
 <div class="input-group">
   <span class="input-group-addon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span>
-  <%= f.telephone_field :phone, :class => "form-control", placeholder: "###-###-####" %>
+  <div class="phone-container">
+    <%= f.fields_for :phone_numbers_attributes do |pnf| %>
+      <span><%= pnf.text_field :phone_number, class: "form-control", placeholder: "###-###-####" %></span>
+      <span>Type: <%= pnf.select :type, options_for_select(PhoneNumber.types) %></span>
+      <span>Primary? <%= pnf.check_box :primary %></span>
+    <% end %>
+  </div>
 </div>
 
 <div class="input-group">

@@ -65,7 +65,16 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :email, :phone, :birthday, :notes)
+    params.require(:contact).permit(
+      :id,
+      :name,
+      :email,
+      :birthday,
+      :notes,
+      # phone_numbers_attributes: [
+      #   :id, :phone_number, :type, :primary, :contact_id
+      # ]
+    )
   end
 
   def column_sort

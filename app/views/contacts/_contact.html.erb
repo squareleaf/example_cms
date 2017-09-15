@@ -12,7 +12,11 @@
 
   <div class="input-group">
     <span class="input-group-addon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span>
-    <%= contact.phone %>
+    <% contact.phone_numbers.each do |number| %>
+      <span><%= number.phone_number %></span>
+      <span><%= number.type %></span>
+      <span><%= number.primary %></span>
+    <% end %>
   </div>
 
   <div class="input-group">
