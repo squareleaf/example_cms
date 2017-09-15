@@ -19,4 +19,11 @@ class ContactTest < ActiveSupport::TestCase
                               phone: '123-456-7890'
     assert !new_contact.valid?
   end
+
+  test "it should have a properly formatted phone number" do
+    new_contact = Contact.new name: "Bob Loblaw",
+                              email: "bob@loblaw.com",
+                              phone: '7632'
+    assert !new_contact.valid?
+  end
 end
