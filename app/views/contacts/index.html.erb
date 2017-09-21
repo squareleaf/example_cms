@@ -24,7 +24,7 @@
     <tr>
       <td><%= image_tag "https://www.gravatar.com/avatar/#{contact.avatar}" %></td>
       <td><%= link_to contact.name, contact_path(contact), remote: true %></td>
-      <td><%= mail_to contact.email, contact.email %></td>
+      <td><%= mail_to contact.email, contact.email, subject: "Hello #{contact.name}" %></td>
       <td><%= contact.phone %></td>
       <td><%= link_to "Delete", contact_path(contact), class: 'btn btn-danger', data: { method: :delete, confirm: "Are you sure you want to delete #{contact.name}?" } %></td>
     </tr>

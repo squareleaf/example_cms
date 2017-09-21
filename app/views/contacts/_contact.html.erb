@@ -1,28 +1,28 @@
 <div class="detail-container">
   <span class="glyphicon glyphicon-remove"></span>
   <div class="input-group">
-    <span class="input-group-addon">Name</span>
-    <%= contact.name %>
+    <div class="input-group-addon">Name</div>
+    <div class="data-field"><%= contact.name %></div>
   </div>
 
   <div class="input-group">
-    <span class="input-group-addon">@</span>
-    <%= contact.email %>
+    <div class="input-group-addon">@</div>
+    <div class="data-field"><%= contact.email %></div>
   </div>
 
   <div class="input-group">
-    <span class="input-group-addon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></span>
-    <%= contact.phone %>
+    <div class="input-group-addon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></div>
+    <div class="data-field"><%= contact.phone %></div>
   </div>
 
   <div class="input-group">
-    <span class="input-group-addon">Birthday</span>
-    <%= contact.birthday || "No birthday entered" %>
+    <div class="input-group-addon">Birthday</div>
+    <div class="data-field"><%= contact.birthday || "No birthday entered" %></div>
   </div>
 
   <div class="input-group">
-    <span class="input-group-addon">Notes</span>
-    <%= contact.notes %>
+    <div class="input-group-addon">Notes</div>
+    <div class="data-field"><%= contact.notes %></div>
   </div>
 
   <div class="input-group">
