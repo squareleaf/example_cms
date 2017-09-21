@@ -6,14 +6,18 @@
   padding: 1em;
   margin: 2em;
   border: 1px solid darken(#c8d6f2, 20%);
-  .glyphicon-remove {
-    float: right;
-    cursor: pointer;
-  }
-  .input-group {
-    clear: both;
-  }
-  .input-group-addon {
-    background-color: #c8d6f2;
-  }
+}
+.glyphicon-remove {
+  float: right;
+  cursor: pointer;
+}
+.input-group {
+  clear: both;
+}
+.input-group-addon {
+  width: 120px !important;
+  background-color: #c8d6f2 !important;
+}
+.data-field {
+  margin: 0.5em 0 0 1em;
 }

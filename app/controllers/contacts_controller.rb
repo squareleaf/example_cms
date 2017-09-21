@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
 
     @contacts = Contact.
       order(column_sort + " " + direction_sort).
-      paginate(page: session[:page] || params[:page], per_page: 20)
+      paginate(page: session[:page] || params[:page], per_page: 10)
   end
 
   def show
